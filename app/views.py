@@ -82,7 +82,7 @@ def registro(request):
         return render(request, '/index.html')
 	#GET se le muestra el formulario de registro
     if request.method == "GET":
-            
+        form = RegistroForm()
         return render(request, 'app/registro.html',{'form': form})
 	#POST procesar peticion de registro
     if request.method == "POST":
@@ -128,13 +128,15 @@ def voto(request):
 
 def new_pelicula(request):
     if request.method == "POST":
-        form = InsertarPeliculaForm(request.POST)
+        form = PeliculaForm(request.POST)
         if form.is_valid():
             peli = form.save(commit=False)
             peli.pub_date=datetime.now()
             peli.save()
+
             #return redirect('detail', pk=question_id)
             #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
+               
     else:
         form = InsertarPeliculaForm()
     return render(request, 'app/new_pelicula.html', {'form': form})
