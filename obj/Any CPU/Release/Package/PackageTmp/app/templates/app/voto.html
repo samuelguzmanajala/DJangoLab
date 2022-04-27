@@ -1,0 +1,24 @@
+{% extends "app/layout.html" %}
+
+{% block title %} Votar {% endblock %}
+
+{% block content %}
+
+<h1>Vota a la mejor pelicula</h1>
+
+<form method="post"> {% csrf_token %}
+	<select id="aukera" name="aukera">
+	{% for filma in pelis %}
+	  <option value="{{ filma.titulo }}">{{ filma.titulo }}</option>
+	{% endfor %}
+	</select> <br/> <br/>
+	<input type="submit" value="Votar"/>
+</form>
+
+{% if resultados == 2 %}
+<b>Ya has votado a {{ voto }}</b> <br/>
+{% elif resultados == 1 %}
+    <b>La votacion es correcta.</b> <br/>
+	<b>Tu voto: </b>{{ voto }}
+{% endif %}
+{% endblock %}

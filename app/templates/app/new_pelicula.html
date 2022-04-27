@@ -1,0 +1,23 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<h1>Insertar una pelicula</h1>
+        Formulario para enviar los datos de la pelicula a la vista
+<!-- pelicula contiene 
+    id integer
+    titulo varchar 100
+    direccion varchar 60
+    anio integer
+    sinopsis varhar 700
+    votos integer
+    genero varchar 30
+6	El Padrino	Francis Ford Coppola	1972	La historia comienza en el verano de 1945, cuando se celebra la boda de Connie (Talia Shire) y Carlo Rizzi (Gianni Russo). Connie es la hija de Don Vito Corleone (Marlon Brando), cabeza de la familia Corleone, y jefe de una de las cinco familias que ejercen el mando de la Cosa Nostra en la ciudad de Nueva York.	5	Thriller
+    -->
+<form method="POST" class="post-form">{% csrf_token %}
+{{ form.as_p }} <!-- as_table-->
+<button type="submit" class="save btn btndefault">Añadir película</button>
+</form>
+{% endblock %}

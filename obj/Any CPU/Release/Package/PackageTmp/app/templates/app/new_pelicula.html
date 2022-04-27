@@ -1,0 +1,15 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<h1>Insertar una pelicula</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+            <button type="submit" class="save btn btn-default">Guardar Pelicula</button>
+        </form>
+
+{% endblock %}
