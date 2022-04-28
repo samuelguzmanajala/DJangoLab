@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CineDjango"
   ],
-  "SelectedNode": "\\CineDjango.sln",
+  "SelectedNode": "\\CineDjango\\urls.py",
   "PreviewInSolutionExplorer": false
 }

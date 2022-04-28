@@ -138,6 +138,6 @@ def new_pelicula(request):
             #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
                
     else:
-        form = InsertarPeliculaForm()
+        form = PeliculaForm()
     return render(request, 'app/new_pelicula.html', {'form': form})
 
